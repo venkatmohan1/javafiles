@@ -1,0 +1,74 @@
+https://github.com/rajulucky812/Setup_Files/blob/main/ansible_master_agent.txt
+https://www.youtube.com/channel/UC87auwKRtE2Itbksg_MyVvQ
+/etc/ansible/ansible.cfg
+/etc/ansible/host
+https://github.com/rajulucky812/Setup_Files/blob/main/ansible_master_agent.txt
+https://www.youtube.com/channel/UC87auwKRtE2Itbksg_MyVvQ
+
+
+========================================
+hostname master
+hostname client
+
+================master and slave is ready ==============
+install java git client machine 
+
+using master ansible 
+we can user configution tool 
+
+we have ganerae key ssh 
+
+cd /root/.ssh
+
+ssh-keygen - t rsa
+ls .ssh/
+
+using public key 
+
+go client machine ============
+ssh-keygen -t rsa
+let add user 
+
+useradd satya ( master)
+useradd satya ( slave )
+passwd satya both server assgin password 
+
+===============matser==============
+yum install epel-relase 
+yum install ansible -y 
+
+ansible --version 
+vim /etc/ansible/ansible.cfg 
+
+vim /etc/ansible/hosts ( go slave IP address )
+[agnet]
+slave pubicl ip
+:wq!
+
+ssh ansible@slaveip
+
+go to salve machhine swihc satya user
+
+ssh-keygen -t rsa
+
+master side just conncet ansible user
+ssh-keygen -t rsa
+ansible_user=satya
+exit
+visudo ( 100th line satya all:all NOPASSWD:ALL) (both servers
+vi /etc/sshd/sshd_config ( Passwd yes :wq!  ) bothr server
+
+systemctl restart sshd 
+
+now we will copy ssh keys slave node
+
+go to master cd /root/.ssh/
+
+ssh-copyid ansible@slaveip
+
+go to slave machine ( switch satya user /home/satya/.ssh 
+
+
+============================anisble instaltion steps ===========================
+
+
